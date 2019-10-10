@@ -1,6 +1,6 @@
 {
-    "title": "Grayscale",
-    "name": "startbootstrap-grayscale",
+    "title": "ReducShare",
+    "name": "ReducShareWebSite",
     "version": "5.0.9",
     "scripts": {
         "start": "node_modules/.bin/gulp watch"
