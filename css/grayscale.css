@@ -298,6 +298,7 @@ footer {
 
 .image-logo {
   width: 25px;
+  max-width: 30px;
   margin: 5px;
   -webkit-filter: blur(2px) gray();
   filter: blur(2px) gray();
