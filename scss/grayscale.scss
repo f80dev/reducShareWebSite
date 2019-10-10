@@ -37,3 +37,9 @@ a {
 footer {
   padding: 5rem 0;
 }
+
+.image-logo {
+  width:25px;
+  margin:5px;
+  filter: blur(2px) gray();
+}
