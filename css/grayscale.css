@@ -304,47 +304,42 @@ footer {
   filter: blur(2px) gray();
 }
 
-.faq-nav {
-  flex-direction: column;
-  margin: 0 0 32px;
-  border-radius: 2px;
-  border: 1px solid #ddd;
-  box-shadow: 0 1px 5px rgba(85, 85, 85, 0.15);
+h2 {
+  font-family: Arial, Verdana;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: #091f2f;
+  text-transform: uppercase;
 }
 
-.faq-nav .nav-link {
-  position: relative;
-  display: block;
-  margin: 0;
-  padding: 13px 16px;
-  background-color: #fff;
+.accordion-section .panel-default > .panel-heading {
   border: 0;
-  border-bottom: 1px solid #ddd;
-  border-radius: 0;
-  color: #616161;
-  transition: background-color .2s ease;
+  background: #f4f4f4;
+  padding: 0;
 }
 
-.faq-nav .nav-link:hover {
-  background-color: #f6f6f6;
+.accordion-section .panel-default .panel-title a {
+  display: block;
+  font-style: italic;
+  font-size: 1.5rem;
 }
 
-.faq-nav .nav-link.active {
-  background-color: #f6f6f6;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.87);
+.accordion-section .panel-default .panel-title a:after {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-size: 3rem;
+  content: "\f106";
+  color: #1f7de2;
+  float: right;
+  margin-top: -12px;
 }
 
-.faq-nav .nav-link:last-of-type {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  border-bottom: 0;
+.accordion-section .panel-default .panel-title a.collapsed:after {
+  content: "\f107";
 }
 
-.faq-nav .nav-link i.mdi {
-  margin-right: 5px;
-  font-size: 18px;
-  position: relative;
+.accordion-section .panel-default .panel-body {
+  font-size: 1.2rem;
 }
 
 .tab-content {
