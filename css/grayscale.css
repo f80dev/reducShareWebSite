@@ -222,6 +222,15 @@
   border: 0;
 }
 
+.ensavoirplus-section {
+  padding: 10rem 0;
+  background-color: #343434;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
 .contact-section {
   padding: 5rem 0 0;
 }
@@ -345,6 +354,36 @@ footer {
   margin-right: 5px;
   font-size: 18px;
   position: relative;
+}
+
+.accordion-section .panel-default > .panel-heading {
+  border: 0;
+  background: #f4f4f4;
+  padding: 0;
+}
+
+.accordion-section .panel-default .panel-title a {
+  display: block;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.accordion-section .panel-default .panel-title a:after {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-size: 3rem;
+  content: "\f106";
+  color: #1f7de2;
+  float: right;
+  margin-top: -12px;
+}
+
+.accordion-section .panel-default .panel-title a.collapsed:after {
+  content: "\f107";
+}
+
+.accordion-section .panel-default .panel-body {
+  font-size: 1.2rem;
 }
 
 .tab-content {
