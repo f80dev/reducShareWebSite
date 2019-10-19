@@ -1,6 +1,6 @@
 var config;
 
-export function start() {
+function start() {
     fetch("https://reducshare.com/assets/config.json").then(function (r) {
         r.json().then(function (data) {
             config = data;
