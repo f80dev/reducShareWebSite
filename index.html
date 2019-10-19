@@ -36,7 +36,7 @@
 
 </head>
 
-<body id="page-top" onload="start()">
+<body id="page-top" onload="run()">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -312,6 +312,12 @@
 <script>
   function openAppli(){
     window.open('https://reducshare.com');
+  }
+
+  function run(){
+      setTimeout(function(){
+          start()
+      },1000);
   }
 </script>
 
