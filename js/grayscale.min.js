@@ -1,6 +1,6 @@
 /*!
- * Start Bootstrap - ReducShare v5.0.9 (https://web.reducshare.com)
- * Copyright 2013-2019 Hervé Hoareau
+ * Start Bootstrap - ReducShare v5.0.9 (https://startbootstrap.com/template-overviews/grayscale)
+ * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/ReducShareWebSite/blob/master/LICENSE)
  */
 
