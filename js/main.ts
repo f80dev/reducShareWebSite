@@ -1,16 +1,28 @@
 var config;
 
-function start() {
+function getParam() {
+    var vars = {};
+    window.location.href.replace( location.hash, '' ).replace(
+        /[?&]+([^=&]+)=?([^&]*)?/gi,
+        ( m, key, value ):any => { vars[key] = value !== undefined ? value : '';}
+    );
+    return vars;
+}
+
+function getModels(filter="") {
     fetch("https://reducshare.com/assets/config.json").then(function (r) {
         r.json().then(function (data) {
             config = data;
 
-            var s = "<table style='display: inline-block;width:90vw;margin-left:5vw;' cellpadding='15px'><tr><th></th><th></th></tr>";
-            config.modeles.forEach(function (modele) {
-                if(modele.score>14){
+            var s = "<table style='display: inline-block;width:70vw;margin-left:10vw;' cellpadding='15px'><tr><th></th><th></th></tr>";
+            config.modeles.forEach((modele) => {
+                if(modele.score>14 || (filter.length>0 && filter.indexOf(modele.tags)>-1)){
                     var desc=modele.description;
                     if(desc==null)desc=modele.label;
-                    s = s + "<tr><td><img src='"+modele.picture+"' style='width:60px;'></td><td>" + desc+" "+modele.conditions + "</td></tr>";
+                    desc=desc+" "+modele.conditions;
+                    if(modele.share_bonus>0)
+                        desc=desc+"<br><small>1"+modele.symbol+" supplémentaire pour "+(1/modele.share_bonus)+" partages</small>";
+                    s = s + "<tr><td><img src='"+modele.picture+"' style='width:80px;'></td><td>" + desc + "</td></tr>";
                 }
             });
             s = s + "</table>";
