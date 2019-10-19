@@ -32,10 +32,11 @@
     gtag('config', 'UA-149843481-1');
   </script>
 
+  <script src="js/main.js"></script>
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="start()">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -202,14 +203,19 @@
 
 
   <!-- Signup Section -->
-  <section id="signup" class="ensavoirplus-section">
+  <section id="signup" class="ensavoirplus-section" >
     <div class="container text-center">
       <h4 class="text-uppercase m-0 text-light">En savoir plus</h4>
-      <br><br><br>
-      <div class="row" style="height:400px;">
+      <br><br>
+      <span class="text-light">
+      Des exemples de modèles de promotions
+      </span>
 
+      <div id="zoneModels" class="text-light text-left"></div>
+      <br><br>
+      <div class="row" style="height:400px;">
         <div class="col-md-10 col-lg-8 mx-auto text-center">
-          <iframe style="width:100%;height:auto;" frameborder="0"
+          <iframe style="display:inline-block;width:80vmin;height:45vmin;" frameborder="0"
                   src="https://mega.nz/embed#!MGJhHaAb!KOTiazcMQbL82-gVRrMLsy33cpGEXBnGH5cU_T65uTk"
                   allowfullscreen>
           </iframe>
