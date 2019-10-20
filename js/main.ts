@@ -13,10 +13,9 @@ function getModels(filter="") {
     fetch("https://reducshare.com/assets/config.json").then(function (r) {
         r.json().then(function (data) {
             config = data;
-
             var s = "<table style='display: inline-block;width:70vw;margin-left:10vw;' cellpadding='15px'><tr><th></th><th></th></tr>";
             config.modeles.forEach((modele) => {
-                if(modele.score>14 || (filter.length>0 && filter.indexOf(modele.tags)>-1)){
+                if((filter.length==0 && modele.score>14) || (modele.score>8 && filter.length>0 && (modele.tags.length==0 || modele.tags.indexOf(filter)>-1))){
                     var desc=modele.description;
                     if(desc==null)desc=modele.label;
                     desc=desc+" "+modele.conditions;
