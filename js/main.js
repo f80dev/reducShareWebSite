@@ -35,12 +35,17 @@ function createFaq(template, zone, file) {
             var s = "";
             if (config.faqs != null) {
                 config.faqs.forEach(function (faq) {
-                    s = s + template.replace("#faq_title", faq.title);
-                    s = s.replace("#faq_content", faq.content);
                     if (!faq.id)
-                        faq.id = "faq" + i;
-                    s = s.replace("#faq_id", faq.id);
-                    s = s.replace("#faq_head_id", "faq_head" + i);
+                        faq.id = "faq_" + i;
+                    else
+                        faq.id = "faq_" + faq.id;
+                    s = s + template;
+                    for (var j = 0; j < 3; j++) {
+                        s = s.replace("faq_title", faq.title);
+                        s = s.replace("faq_content", faq.content);
+                        s = s.replace("faq_id", faq.id);
+                        s = s.replace("faq_head_id", "head_" + faq.id);
+                    }
                 });
             }
             zone.innerHTML = s;

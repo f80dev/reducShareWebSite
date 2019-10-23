@@ -45,32 +45,32 @@
   <div class="card">
 
     <div id="faq_template" style="display: none;">
-      <div class="card-header" role="tab" id="#faq_head_id">
-        <a data-toggle="collapse" data-parent="#accordionEx" href="##faq_id" aria-expanded="true"
-           aria-controls="collapseOne1">
+      <!-- Card header -->
+      <div class="card-header" role="tab" id="faq_head_id">
+        <a data-toggle="collapse" data-parent="#accordionEx" href="#faq_id" aria-expanded="true"
+           aria-controls="faq_id">
           <h5 class="mb-0">
-            #faq_title
+            faq_title
             <i class="fas fa-angle-down rotate-icon"></i>
           </h5>
         </a>
       </div>
 
     <!-- Card body -->
-      <div id="#faq_id" class="collapse show" role="tabpanel"
-           aria-labelledby="#faq_head_id"
+      <div id="faq_id" class="collapse hide" role="tabpanel"
+           aria-labelledby="faq_head_id"
            data-parent="#accordionEx">
         <div class="card-body">
-          #faq_content
+          faq_content
         </div>
       </div>
 
     </div>
 
-    <div id="faq_zone"></div>
-
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingOne1">
-      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+      <a data-toggle="collapse" data-parent="#accordionEx"
+         href="#collapseOne1" aria-expanded="true"
          aria-controls="collapseOne1">
         <h5 class="mb-0">
           A quoi sert ReducShare ?
@@ -80,7 +80,8 @@
     </div>
 
     <!-- Card body -->
-    <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+    <div id="collapseOne1" class="collapse show" role="tabpanel"
+         aria-labelledby="headingOne1"
          data-parent="#accordionEx">
       <div class="card-body">
         ReducShare permet à des vendeurs de fabriquer en quelques clics des
@@ -109,45 +110,15 @@
             </td>
           </tr>
         </table>
-
-
       </div>
     </div>
 
 
+    <div id="faq_zone"></div>
 
-
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="heading2">
-      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse2" aria-expanded="true"
-         aria-controls="collapseOne1">
-        <h5 class="mb-0">
-          Comment faire une promotion ?
-          <i class="fas fa-angle-down rotate-icon"></i>
-        </h5>
-      </a>
-    </div>
-
-    <!-- Card body -->
-    <div id="collapse2" class="collapse show" role="tabpanel" aria-labelledby="heading2"
-         data-parent="#accordionEx">
-      <div class="card-body">
-        Pour lancer une promotion il faut avoir créer au moins un établissement avant (car la promotion est
-        rattaché à l'établissement).
-
-        Depuis l'établissement on ajoute la promotion. On peut soit partir des valeurs par défaut,
-        soit choisir un modèle.
-
-        Les valeurs à saisir sont regroupées en 5 sections.
-        Une fois la promotion validée, celle-ci apparait dans la section de l'établissement
-      </div>
-    </div>
 
   </div>
 </div>
-
-
-
 
 
 
@@ -170,8 +141,7 @@
   function run(){
     createFaq(
             document.getElementById("faq_template").innerHTML,
-            document.getElementById("faq_zone"),
-            "./js/faqs.json"
+            document.getElementById("faq_zone")
     );
   }
 
