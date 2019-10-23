@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <link rel="stylesheet" type="text/css" href="scss/grayscale.scss"/>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,6 +23,7 @@
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149843481-1"></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -35,88 +35,146 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="run()">
 
-<section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
-  <div class="container">
 
-    <h2>Frequently Asked Questions </h2>
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-      <div class="panel panel-default">
-        <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
-          <h3 class="panel-title">
-            <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
-              What are the benefits of Solodev CMS?
-            </a>
-          </h3>
-        </div>
-        <div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
-          <div class="panel-body px-3 mb-4">
-            <p>With Solodev CMS, you and your visitors will benefit from a finely-tuned technology stack that drives the highest levels of site performance, speed and engagement - and contributes more to your bottom line. Our users fell in love with:</p>
-            <ul>
-              <li>Light speed deployment on the most secure and stable cloud infrastructure available on the market.</li>
-              <li>Scalability – pay for what you need today and add-on options as you grow.</li>
-              <li>All of the bells and whistles of other enterprise CMS options but without the design limitations - this CMS simply lets you realize your creative visions.</li>
-              <li>Amazing support backed by a team of Solodev pros – here when you need them.</li>
-            </ul>
-          </div>
+<!--Accordion wrapper-->
+<div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+  <!-- Accordion card -->
+  <div class="card">
+
+    <div id="faq_template" style="display: none;">
+      <div class="card-header" role="tab" id="#faq_head_id">
+        <a data-toggle="collapse" data-parent="#accordionEx" href="##faq_id" aria-expanded="true"
+           aria-controls="collapseOne1">
+          <h5 class="mb-0">
+            #faq_title
+            <i class="fas fa-angle-down rotate-icon"></i>
+          </h5>
+        </a>
+      </div>
+
+    <!-- Card body -->
+      <div id="#faq_id" class="collapse show" role="tabpanel"
+           aria-labelledby="#faq_head_id"
+           data-parent="#accordionEx">
+        <div class="card-body">
+          #faq_content
         </div>
       </div>
 
-      <div class="panel panel-default">
-        <div class="panel-heading p-3 mb-3" role="tab" id="heading1">
-          <h3 class="panel-title">
-            <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-              How easy is it to build a website with Solodev CMS?
-            </a>
-          </h3>
-        </div>
-        <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
-          <div class="panel-body px-3 mb-4">
-            <p>Building a website is extremely easy. With a working knowledge of HTML and CSS you will be able to have a site up and running in no time.</p>
-          </div>
-        </div>
-      </div>
+    </div>
 
-      <div class="panel panel-default">
-        <div class="panel-heading p-3 mb-3" role="tab" id="heading2">
-          <h3 class="panel-title">
-            <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
-              What is the uptime for Solodev CMS?
-            </a>
-          </h3>
-        </div>
-        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
-          <div class="panel-body px-3 mb-4">
-            <p>Using Amazon AWS technology which is an industry leader for reliability you will be able to experience an uptime in the vicinity of 99.95%.</p>
-          </div>
-        </div>
-      </div>
+    <div id="faq_zone"></div>
 
-      <div class="panel panel-default">
-        <div class="panel-heading p-3 mb-3" role="tab" id="heading3">
-          <h3 class="panel-title">
-            <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
-              Can Solodev CMS handle multiple websites for my company?
-            </a>
-          </h3>
-        </div>
-        <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
-          <div class="panel-body px-3 mb-4">
-            <p>Yes, Solodev CMS is built to handle the needs of any size company. With our Multi-Site Management, you will be able to easily manage all of your websites.</p>
-          </div>
-        </div>
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="headingOne1">
+      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+         aria-controls="collapseOne1">
+        <h5 class="mb-0">
+          A quoi sert ReducShare ?
+          <i class="fas fa-angle-down rotate-icon"></i>
+        </h5>
+      </a>
+    </div>
+
+    <!-- Card body -->
+    <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+         data-parent="#accordionEx">
+      <div class="card-body">
+        ReducShare permet à des vendeurs de fabriquer en quelques clics des
+        réductions dont le montant augmente à chaque fois qu’elles sont repartagées par les clients.
+
+        Les bénéfices sont :
+        <table>
+          <tr>
+            <th>Pour un acheteur</th>
+            <th>Pour un vendeur</th>
+          </tr>
+          <tr>
+            <td>
+              de profiter de promotions dont la valeur peut augmenter
+              de trouver les reductions de son quartier et de recevoir automatiquement celles de ses enseignes préférées
+            </td>
+            <td>
+              <ul>
+                <li>de fabriquer des promotions en quelques clics,</li>
+                <li>de contrôler le coût des promotions : gestion du stock réservé à la promotion, interruption de la diffusion, fermeture prématuré de la promotion</li>
+                <li>de les diffuser gratuitement via la recommandation ou la localisation,</li>
+                <li>d’identifier les circuits de diffusion pour optimiser la diffusion des réductions suivantes,</li>
+                <li>de fidéliser ses clients via le système d’abonnement,</li>
+                <li>de pouvoir faire des promotions flash, sur des durées courtes</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+
+
+      </div>
+    </div>
+
+
+
+
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="heading2">
+      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse2" aria-expanded="true"
+         aria-controls="collapseOne1">
+        <h5 class="mb-0">
+          Comment faire une promotion ?
+          <i class="fas fa-angle-down rotate-icon"></i>
+        </h5>
+      </a>
+    </div>
+
+    <!-- Card body -->
+    <div id="collapse2" class="collapse show" role="tabpanel" aria-labelledby="heading2"
+         data-parent="#accordionEx">
+      <div class="card-body">
+        Pour lancer une promotion il faut avoir créer au moins un établissement avant (car la promotion est
+        rattaché à l'établissement).
+
+        Depuis l'établissement on ajoute la promotion. On peut soit partir des valeurs par défaut,
+        soit choisir un modèle.
+
+        Les valeurs à saisir sont regroupées en 5 sections.
+        Une fois la promotion validée, celle-ci apparait dans la section de l'établissement
       </div>
     </div>
 
   </div>
-</section>
+</div>
+
+
+
+
+
+
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/grayscale.min.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 
 <script>
-  function openAppli(){
-    window.open('https://reducshare.com');
+  function run(){
+    createFaq(
+            document.getElementById("faq_template").innerHTML,
+            document.getElementById("faq_zone"),
+            "./js/faqs.json"
+    );
   }
+
 </script>
 
 </html>
