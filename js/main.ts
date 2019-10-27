@@ -13,7 +13,7 @@ function getModels(filter="") {
     fetch("https://reducshare.com/assets/config.json").then(function (r) {
         r.json().then(function (data) {
             config = data;
-            var s = "<table style='display: inline-block;width:50vw;margin-left:3vw;' cellpadding='15px'><tr><th></th><th></th></tr>";
+            var s = "<table style='display: inline-block;width:70vw;margin-left:3vw;' cellpadding='15px'><tr><th></th><th></th></tr>";
             config.modeles.forEach((modele) => {
                 if((filter.length==0 && modele.score>14) || (modele.score>10 && filter.length>0 && (modele.tags.length==0 || modele.tags.indexOf(filter)>-1))){
                     var desc=modele.description;
@@ -21,7 +21,9 @@ function getModels(filter="") {
                     desc=desc+" "+modele.conditions;
                     if(modele.share_bonus>0)
                         desc=desc+"<br><small>la promotion commence à "+modele.direct_bonus+modele.symbol+", et augmente de 1"+modele.symbol+" supplémentaire chaque fois qu'il la partage "+(1/modele.share_bonus)+" fois</small>";
-                    s = s + "<tr><td><img src='"+modele.picture+"' style='width:80px;'></td><td>" + desc + "</td></tr>";
+                    s = s + "<tr><td style='width:100px;'><img src='"+modele.picture+"' style='width:80px;'></td><td>" + desc + "</td>";
+                    if(modele.id==null)modele["id"]="";
+                    s=s+"<td style='width:30px;'><a href='https://reducshare.com/?command=add_shop,add_promo("+modele.id+")'>Tester</a></td></tr>"
                 }
             });
             s = s + "</table>";
