@@ -4,9 +4,17 @@ function getParam() {
     window.location.href.replace(location.hash, '').replace(/[?&]+([^=&]+)=?([^&]*)?/gi, function (m, key, value) { vars[key] = value !== undefined ? value : ''; });
     return vars;
 }
+function getServer() {
+    var server = getParam().server;
+    if (server == null)
+        server = "https://reducshare.com";
+    if (!server.startsWith("http"))
+        server = "http://" + server;
+    return server;
+}
 function getModels(filter) {
     if (filter === void 0) { filter = ""; }
-    fetch("https://reducshare.com/assets/config.json").then(function (r) {
+    fetch(getServer() + "/assets/config.json").then(function (r) {
         r.json().then(function (data) {
             config = data;
             var s = "<table style='display: inline-block;width:80vw;margin-left:3vw;' cellpadding='15px'><tr><th></th><th></th></tr>";
@@ -33,8 +41,8 @@ function getModels(filter) {
 }
 function createFaq(template, zone, file) {
     if (template === void 0) { template = ""; }
-    if (file === void 0) { file = "https://reducshare.com/assets/config.json"; }
-    fetch(file).then(function (r) {
+    if (file === void 0) { file = "/config.json"; }
+    fetch(getServer() + "/assets/" + file).then(function (r) {
         r.json().then(function (config) {
             var i = 0;
             var s = "";

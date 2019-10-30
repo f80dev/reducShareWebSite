@@ -1,6 +1,6 @@
 var config;
 
-function getParam() {
+function getParam():any {
     var vars = {};
     window.location.href.replace( location.hash, '' ).replace(
         /[?&]+([^=&]+)=?([^&]*)?/gi,
@@ -9,8 +9,16 @@ function getParam() {
     return vars;
 }
 
+function getServer(){
+    var server=getParam().server;
+    if(server==null)server="https://reducshare.com";
+    if(!server.startsWith("http"))server="http://"+server;
+    return server;
+}
+
 function getModels(filter="") {
-    fetch("https://reducshare.com/assets/config.json").then(function (r) {
+
+    fetch(getServer()+"/assets/config.json").then(function (r) {
         r.json().then(function (data) {
             config = data;
             var s = "<table style='display: inline-block;width:80vw;margin-left:3vw;' cellpadding='15px'><tr><th></th><th></th></tr>";
@@ -27,8 +35,6 @@ function getModels(filter="") {
                         desc=desc+"<br><small>la promotion commence à "+modele.direct_bonus+modele.symbol+", et augmente de 1"+modele.symbol+" supplémentaire chaque fois qu'il la partage "+(1/modele.share_bonus)+" fois</small>";
                     s = s + "<tr><td style='width:100px;text-align: center;margin:0px;'><a href='"+run_url+"'><img src='"+modele.picture+"' style='width:80px;'>"+test_button+"</a></td><td>" + desc + "</td>";
 
-
-
                     s=s+"</tr>"
                 }
             });
@@ -38,8 +44,8 @@ function getModels(filter="") {
     });
 }
 
-function createFaq(template:string="",zone:HTMLElement,file:string="https://reducshare.com/assets/config.json"){
-    fetch(file).then(function (r:any) {
+function createFaq(template:string="",zone:HTMLElement,file:string="/config.json"){
+    fetch(getServer()+"/assets/"+file).then(function (r:any) {
         r.json().then(function (config) {
             var i = 0;
             var s = "";
