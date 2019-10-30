@@ -53,9 +53,11 @@ function createFaq(template:string="",zone:HTMLElement,file:string="https://redu
                     s =s + template;
                     for(var j=0;j<3;j++){
                         s=s.replace("faq_title", faq.title);
+                        if(faq.content.startsWith("http")){
+                            faq.content="<iframe src='"+faq.content+"' frameborder='0'></iframe>";
+                        }
                         s = s.replace("faq_content", faq.content);
                         s = s.replace("faq_id", faq.id);
-
                         s = s.replace("faq_head_id", "head_" + faq.id);
                     }
                 });
