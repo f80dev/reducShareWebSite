@@ -16,8 +16,8 @@ function getServer(){
     return server;
 }
 
-function getModels(filter="") {
 
+function getModels(filter="") {
     fetch(getServer()+"/assets/config.json").then(function (r) {
         r.json().then(function (data) {
             config = data;
