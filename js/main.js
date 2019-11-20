@@ -26,7 +26,7 @@ function getModels(filter) {
                     desc = desc + " " + modele.conditions;
                     if (modele.id == null)
                         modele["id"] = "";
-                    var run_url = "https://reducshare.com/?command=add_pseudo,add_shop,add_promo(" + modele.id + ")";
+                    var run_url = "https://reducshare.com/?command=add_pseudo,add_shop(" + modele.tags + "),add_promo(" + modele.id + ")";
                     var test_button = "<br><div style='margin-top:4px;padding:5px;font-size: x-small;pointer-events: none;' class='btn btn-secondary'>Tester</div>";
                     if (modele.share_bonus > 0)
                         desc = desc + "<br><span style='font-size: small;color:gray;'>Quand il récupère le coupon, le client gagne immédiatement "
