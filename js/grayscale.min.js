@@ -1,5 +1,5 @@
 /*!
- * Start Bootstrap - ReducShare v5.0.9 (https://startbootstrap.com/template-overviews/grayscale)
+ * Start Bootstrap - REDUCSHARE v5.0.9 (https://startbootstrap.com/template-overviews/grayscale)
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/ReducShareWebSite/blob/master/LICENSE)
  */
