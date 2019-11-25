@@ -29,8 +29,14 @@ function getModels(filter) {
                     var run_url = "https://reducshare.com/?command=add_pseudo,add_shop(" + modele.tags + "),add_promo(" + modele.id + ")";
                     var test_button = "<br><div style='margin-top:4px;padding:5px;font-size: x-small;pointer-events: none;' class='btn btn-secondary'>Tester</div>";
                     if (modele.share_bonus > 0)
-                        desc = desc + "<br><span style='font-size: small;color:gray;'>Quand il récupère le coupon, le client gagne immédiatement "
-                            + modele.direct_bonus + modele.symbol + ", et son gain augmente de 1"
+                        desc = desc + "<br><span style='font-size: small;color:gray;'>";
+                    if (modele.direct_bonus > 0)
+                        desc = desc + "Quand il récupère le coupon, le client gagne immédiatement "
+                            + modele.direct_bonus + modele.symbol + ", et ";
+                    else
+                        desc = desc + "Le client récupère le coupon et ";
+                    if (modele.share_bonus > 0)
+                        desc = desc + "son gain augmente de 1"
                             + modele.symbol + " supplémentaire chaque fois qu'il le partage " + (1 / modele.share_bonus) + " fois</span>";
                     s = s + "<tr><td style='width:100px;text-align: center;margin:0px;'><a href='" + run_url + "'><img src='" + modele.picture + "' style='width:80px;'>" + test_button + "</a></td><td>" + desc + "</td>";
                     s = s + "</tr>";
