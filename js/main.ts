@@ -91,20 +91,20 @@ function start_exemple() {
         },
         step1:{
             image:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/232/baguette-bread_1f956.png",
-            label:"John viens acheter son pain,Dans la boulangerie,<br>il tombe sur une affiche de promotion pour des croissants",
+            label:"John viens acheter son pain. Dans la boulangerie,<br>il tombe sur une affiche de promotion pour des croissants",
 
         },
         step2:{
-            image:"/img/qrcode.png",
+            image:"https://web.reducshare.com/img/qrcode.png",
             label:"Pour profitez de la promotion,<br>il flash le QRCode présent sur l'affiche.",
 
         },
         step3:{
-            image:"/img/recup_promo.png",
+            image:"https://web.reducshare.com/img/recup_promo.png",
             label:"Son téléphone affiche immédiatement<br>tous les détails de l'offre"
         },
         step4:{
-            image:"/img/social.png",
+            image:"https://web.reducshare.com/img/social.png",
             label:"Plutôt qu'utiliser sa promotion REDUCSHARE lui propose <br>de l'envoyer à ses contacts pour gagner d'autres croissants"
         },
         step5:{
@@ -112,11 +112,11 @@ function start_exemple() {
             label:"De retour chez lui,<br>la promotion n'indique plus 1, mais 2 croissants gagnés !"
         },
         step6:{
-            image:"/img/2croissants.png",
+            image:"https://web.reducshare.com/img/2croissants.png",
             label:"Le lendemain, le boulanger flash le code de sa promotion<br>puis lui offre les 2 croissants comme indiqué sur son téléphone",
         },
         step7:{
-            image:"/img/hourglass.png",
+            image:"https://web.reducshare.com/img/hourglass.png",
             label:"le stock de croissants prévu pour la promotion est épuisé<br>Elle disparait automatiquement de tous les téléphones",
         }
     };
