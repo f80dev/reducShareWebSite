@@ -80,3 +80,59 @@ function createFaq(template:string="",zone:HTMLElement,file:string="/config.json
         });
     });
 }
+
+
+
+function start_exemple() {
+    var competences = {
+        step0:{
+            image:"",
+            label:"Prenons l'exemple d'un boulanger<br>utilisant REDUCSHARE"
+        },
+        step1:{
+            image:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/232/baguette-bread_1f956.png",
+            label:"John viens acheter son pain,Dans la boulangerie,<br>il tombe sur une affiche de promotion pour des croissants",
+
+        },
+        step2:{
+            image:"/img/qrcode.png",
+            label:"Pour profitez de la promotion,<br>il flash le QRCode présent sur l'affiche.",
+
+        },
+        step3:{
+            image:"/img/recup_promo.png",
+            label:"Son téléphone affiche immédiatement<br>tous les détails de l'offre"
+        },
+        step4:{
+            image:"/img/social.png",
+            label:"Plutôt qu'utiliser sa promotion REDUCSHARE lui propose <br>de l'envoyer à ses contacts pour gagner d'autres croissants"
+        },
+        step5:{
+            image:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/232/victory-hand_270c.png",
+            label:"De retour chez lui,<br>la promotion n'indique plus 1, mais 2 croissants gagnés !"
+        },
+        step6:{
+            image:"/img/2croissants.png",
+            label:"Le lendemain, le boulanger flash le code de sa promotion<br>puis lui offre les 2 croissants comme indiqué sur son téléphone",
+        },
+        step7:{
+            image:"/img/hourglass.png",
+            label:"le stock de croissants prévu pour la promotion est épuisé<br>Elle disparait automatiquement de tous les téléphones",
+        }
+    };
+    var toActivate=true;
+    for(var p in competences){
+        var div=document.createElement("div");
+        if(competences[p].label==null)competences[p].label="";
+        div.innerHTML="<img style='margin:10px;height:200px;max-width:350px;' src='"+competences[p].image+"' class='logos-competences'><br><br>" +
+            ""+competences[p].label+"";
+
+        if(toActivate){
+            toActivate=false;
+            div.className="carousel-item active";
+        } else
+            div.className="carousel-item";
+
+        document.getElementById("carousel_content").appendChild(div);
+    }
+}

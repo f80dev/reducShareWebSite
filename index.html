@@ -77,7 +77,7 @@
         <h1 class="mx-auto my-0 text-uppercase">REDUCSHARE</h1>
         <br><br>
         <h2 class="text-white-50 mx-auto mt-2 mb-5">
-          Le marketing viral, qui respecte la vie privée, à destination des indépendants, du commerce de proximité et des TPE/PME
+          Transformer vos clients en vendeur grâce aux promotions dynamiques
         </h2>
         <br><br><a href="#about" class="btn btn-primary js-scroll-trigger">Commencer</a>
       </div>
@@ -89,17 +89,30 @@
     <div class="container">
       <div class="row text-light">
         <div class="col-lg-8 mx-auto">
-          <h2 class="mb-4">L'appli qui transforme vos clients en vendeurs</h2>
-
-          <hr class="d-none d-lg-block" style="width:40%;border:#0f6674 solid 2px;">
+          <h2 class="mb-4">Lancer vos promotions et touchez rapidement des centaines de clients potentiels</h2>
           <br>
-          <p>
-            Grâce à REDUCSHARE vous fabriquez une promotion en quelques clics,
-            vous la difuser mais surtout <strong>vos clients la redifuse</strong> pour augmenter leur avantage !
-            <br>Rapidement vous touchez plusieurs centaines de
-            clients potentiels
-          </p>
-            <span>REDUCSHARE vous permet également:</span><br><br>
+          <br>
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="7000">
+            <div class="carousel-inner">
+              <div id="carousel_content" class="text-center carousel-title"
+                   style="width:80%;margin-left:10%;height:400px;font-size: large;">
+              </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only text-dark" >Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only text-dark">Next</span>
+            </a>
+          </div>
+
+          <br>
+          <hr class="d-none d-lg-block" style="width:40%;border:#0f6674 solid 2px;">
+          <br><br>
+            <span>En tant que vendeur, REDUCSHARE vous permet également:</span><br><br>
             <ul class="text-left ml-3 p-0">
               <li>de faire des promos flash, valables de plusieurs jours à quelques minutes !</li>
               <li>de rendre vos promotions visibles aux clients proches de votre enseigne,</li>
@@ -382,6 +395,7 @@
   function run(){
     tags=getParam()["tags"];
     getModels(tags);
+    start_exemple();
   }
 </script>
 
