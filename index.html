@@ -404,13 +404,16 @@
 <script>
 
     var tags="";
+    var domain="https://reducshare.com";
+    //domain="http://localhost:4200";
+
 
     function openAppli(){
-        window.open("https://reducshare.com/?tags="+tags+"&command=add_shop,add_promo()");
+        window.open(domain+"/?tags="+tags+"&command=add_shop,add_promo()");
     }
 
     function openExemple(){
-        window.open("https://reducshare.com/?tags=commerce&command=add_shop(ma_boulangerie),add_promo(invendus)");
+        window.open(domain+"/?tags=commerce&command=add_shop(commerce,ma_boulangerie),add_promo(invendus)");
     }
 
     function run(){
