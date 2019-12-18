@@ -34,5 +34,12 @@ Les valeurs à saisir sont regroupées en plusieurs sections :
 
 Une fois la promotion validée, celle-ci apparait dans la section de l'établissement<br>
 
+<script>
+    window.document.onload=()=>{
+        let brand=getParam().brand;
+        if(brand)document.body.innerHTML = replaceAll(document.body.innerHTML, "REDUCSHARE", brand);
+    };
+</script>
+
 </body>
 </html>

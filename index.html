@@ -310,7 +310,7 @@
   <div class="container text-center">
     <h4 class="mb-4 text-light">
       Vous pouvez également consulter les <br>
-      <a href="./faq.html">Questions Fréquentes</a>
+      <a href="./faq.html?brand=REDUCSHARE">Questions Fréquentes</a>
     </h4>
   </div>
 </section>
@@ -419,7 +419,10 @@
     function run(){
         tags=getParam()["tags"];
         getModels(tags);
-        start_exemple();
+        start_exemple(()=>{
+            let brand=getParam().brand;
+            if(brand)document.body.innerHTML = replaceAll(document.body.innerHTML, "REDUCSHARE", brand);
+        });
     }
 </script>
 

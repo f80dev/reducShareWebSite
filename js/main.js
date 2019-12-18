@@ -83,7 +83,7 @@ function createFaq(template, zone, file, func) {
                     for (var j = 0; j < 3; j++) {
                         s = s.replace("faq_title", faq.title);
                         if (faq.content.startsWith("http") || faq.content.endsWith("html")) {
-                            faq.content = "<div class='embed-responsive embed-responsive-16by9'><iframe width='100%' class='embed-responsive-item' src='" + faq.content + "' frameborder='0'></iframe></div>";
+                            faq.content = "<div class='embed-responsive embed-responsive-16by9'><iframe width='100%' class='embed-responsive-item' src='" + faq.content + "?brand=REDUCSHARE' frameborder='0'></iframe></div>";
                         }
                         s = s.replace("faq_content", faq.content);
                         s = s.replace("faq_id", faq.id);
@@ -97,7 +97,7 @@ function createFaq(template, zone, file, func) {
         });
     });
 }
-function start_exemple() {
+function start_exemple(func) {
     var competences = {
         step0: {
             image: "",
@@ -147,4 +147,6 @@ function start_exemple() {
             div.className = "carousel-item";
         document.getElementById("carousel_content").appendChild(div);
     }
+    if (func)
+        func();
 }

@@ -185,8 +185,12 @@
             document.getElementById("zone"+i).style.opacity=op;
             if(op==1)clearInterval(handle);
         },50);
-
     }
+
+    document.onload=()=>{
+        let brand=getParam().brand;
+        if(brand)document.body.innerHTML = replaceAll(document.body.innerHTML, "REDUCSHARE", brand);
+    };
 </script>
 
 

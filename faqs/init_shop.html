@@ -58,6 +58,13 @@ une adresse postale, ou virtuel avec une adresse internet (en développement).
     <li>Analyser la diffusion de vos dernières promotions pour optimiser les suivantes</li>
 </ul>
 
+<script>
+    document.onload=()=>{
+        let brand=getParam().brand;
+        if(brand)document.body.innerHTML = replaceAll(document.body.innerHTML, "REDUCSHARE", brand);
+    };
+</script>
+
 </body>
 </html>
 
