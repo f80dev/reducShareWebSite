@@ -47,9 +47,28 @@ function getModels(filter) {
         });
     });
 }
-function createFaq(template, zone, file) {
+/**
+ * Fonction de remplacement
+ * @param text
+ * @param to_find
+ * @param _new
+ */
+function replaceAll(text, to_find, _new) {
+    for (var i = 0; i < 10; i++)
+        text = text.replace(to_find, _new);
+    return text;
+}
+/**
+ *
+ * @param template
+ * @param zone
+ * @param file
+ * @param brand
+ */
+function createFaq(template, zone, file, func) {
     if (template === void 0) { template = ""; }
     if (file === void 0) { file = "/config.json"; }
+    if (func === void 0) { func = null; }
     fetch(getServer() + "/assets/" + file).then(function (r) {
         r.json().then(function (config) {
             var i = 0;
@@ -69,6 +88,8 @@ function createFaq(template, zone, file) {
                         s = s.replace("faq_content", faq.content);
                         s = s.replace("faq_id", faq.id);
                         s = s.replace("faq_head_id", "head_" + faq.id);
+                        if (func)
+                            func();
                     }
                 });
             }

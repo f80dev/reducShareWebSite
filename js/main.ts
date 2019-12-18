@@ -51,8 +51,27 @@ function getModels(filter="") {
     });
 }
 
+/**
+ * Fonction de remplacement
+ * @param text
+ * @param to_find
+ * @param _new
+ */
+function replaceAll(text:string,to_find:string,_new:string){
+    for(let i=0;i<10;i++)
+        text=text.replace(to_find,_new);
+    return text;
+}
 
-function createFaq(template:string="",zone:HTMLElement,file:string="/config.json"){
+
+/**
+ *
+ * @param template
+ * @param zone
+ * @param file
+ * @param brand
+ */
+function createFaq(template:string="",zone:HTMLElement,file:string="/config.json",func=null){
     fetch(getServer()+"/assets/"+file).then(function (r:any) {
         r.json().then(function (config) {
             var i = 0;
@@ -73,6 +92,7 @@ function createFaq(template:string="",zone:HTMLElement,file:string="/config.json
                         s = s.replace("faq_content", faq.content);
                         s = s.replace("faq_id", faq.id);
                         s = s.replace("faq_head_id", "head_" + faq.id);
+                        if(func)func();
                     }
                 });
             }
