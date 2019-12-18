@@ -189,7 +189,7 @@
   function run(){
     createFaq(
             document.getElementById("faq_template").innerHTML,
-            document.getElementById("faq_zone"),null,
+            document.getElementById("faq_zone"),"/config.json",
             ()=>{
                 let brand=getParam().brand;
                 if(brand)document.body.innerHTML = replaceAll(document.body.innerHTML, "REDUCSHARE", brand);

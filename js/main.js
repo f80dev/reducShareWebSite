@@ -65,7 +65,7 @@ function replaceAll(text, to_find, _new) {
  * @param file
  * @param brand
  */
-function createFaq(template, zone, file, func) {
+function createFaq(template, zone, file, func=null) {
     if (template === void 0) { template = ""; }
     if (file === void 0) { file = "/config.json"; }
     if (func === void 0) { func = null; }
@@ -88,8 +88,7 @@ function createFaq(template, zone, file, func) {
                         s = s.replace("faq_content", faq.content);
                         s = s.replace("faq_id", faq.id);
                         s = s.replace("faq_head_id", "head_" + faq.id);
-                        if (func)
-                            func();
+                        if (func)func();
                     }
                 });
             }
